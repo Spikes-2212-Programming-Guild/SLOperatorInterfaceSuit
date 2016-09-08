@@ -6,8 +6,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class XboXUID extends Joystick {
 
-	
-	
 	public XboXUID(int port) {
 		super(port);
 	}
@@ -47,30 +45,37 @@ public class XboXUID extends Joystick {
 	public Button getRtButton() {
 		return new JoystickButton(this, 8);
 	}
+
 	public Button getRbButton() {
 		return new JoystickButton(this, 6);
 	}
+
 	public Button getLtButton() {
 		return new JoystickButton(this, 7);
 	}
+
 	public Button getLbButton() {
 		return new JoystickButton(this, 5);
 	}
+
 	public boolean getRawRtButton() {
 		return this.getRawButton(8);
 	}
+
 	public boolean getRawRbButton() {
 		return this.getRawButton(6);
 	}
+
 	public boolean getRawLtButton() {
 		return this.getRawButton(7);
 	}
+
 	public boolean getRawLbButton() {
 		return this.getRawButton(5);
 	}
-	public Button getxutton() {
+
+	public Button getxButton() {
 		return new JoystickButton(this, 0);
 	}
-	
-}
 
+}
