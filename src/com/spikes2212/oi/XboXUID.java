@@ -1,13 +1,21 @@
 package com.spikes2212.oi;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
+import edu.wpi.first.wpilibj.Joystick.AxisType;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class XboXUID extends Joystick {
 
+	static final int X_RIGHT = 0;
+	static final int X_LEFT = 1;
+	static final int Y_RIGHT = 2;
+	static final int Y_LEFT = 3;
+
 	public XboXUID(int port) {
 		super(port);
+
 	}
 
 	public Button getGreenButton() {
@@ -26,22 +34,6 @@ public class XboXUID extends Joystick {
 		return new JoystickButton(this, 4);
 	}
 
-	public boolean getRawYellowButton() {
-		return this.getRawButton(4);
-	}
-
-	public boolean getRawBlueButton() {
-		return this.getRawButton(1);
-	}
-
-	public boolean getRawRedButton() {
-		return this.getRawButton(3);
-	}
-
-	public boolean getRawGreenButton() {
-		return this.getRawButton(2);
-	}
-
 	public Button getRtButton() {
 		return new JoystickButton(this, 8);
 	}
@@ -58,24 +50,31 @@ public class XboXUID extends Joystick {
 		return new JoystickButton(this, 5);
 	}
 
-	public boolean getRawRtButton() {
-		return this.getRawButton(8);
+	public double getRightX() {
+		return getRawAxis(X_RIGHT);
 	}
 
-	public boolean getRawRbButton() {
-		return this.getRawButton(6);
+	public double getRightY() {
+		return getRawAxis(Y_RIGHT);
 	}
 
-	public boolean getRawLtButton() {
-		return this.getRawButton(7);
+	public double getLefttX() {
+		return getRawAxis(X_LEFT);
 	}
 
-	public boolean getRawLbButton() {
-		return this.getRawButton(5);
+	public double getLeftY() {
+		return getRawAxis(Y_RIGHT);
 	}
-
-	public Button getxButton() {
-		return new JoystickButton(this, 0);
-	}
-
+	public Button getUpButton() {
+		return new JoystickButton(this, 14);
+}
+	public Button getDownButton() {
+		return new JoystickButton(this,15 );
+}
+	public Button getLeftButton() {
+		return new JoystickButton(this, 16);
+}
+	public Button getRightButton() {
+		return new JoystickButton(this,17 );
+}
 }
